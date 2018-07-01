@@ -2,6 +2,10 @@
     <string name="app_name">TwitterClient</string>
 
     <string name="login">LOGIN</string>
+    <string name="home_page">Home Page</string>
     <string name="send">SEND</string>
     <string name="fab_target">fab target</string>
+    <string name="image_target">image target</string>
+
+    <string name="compose">What\'s happening?</string>
 </resources>

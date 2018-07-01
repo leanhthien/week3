@@ -13,6 +13,15 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="NoActionBar_Welcome" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:windowExitTransition">@transition/welcome_exit</item>
+        <item name="android:windowReenterTransition">@transition/welcome_reenter</item>
+    </style>
+
     <style name="NoActionBar_Timeline" parent="Theme.AppCompat.Light.NoActionBar">
 
         <item name="android:windowActionBar">false</item>

@@ -21,6 +21,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        renderscriptTargetApi 28
+        renderscriptSupportModeEnabled true
     }
     buildTypes {
         debug {
@@ -80,7 +82,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha1'
     implementation 'joda-time:joda-time:2.10'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
-
     implementation 'com.android.support:design:28.0.0-alpha1'
 
     //Glide
@@ -89,22 +90,19 @@ dependencies {
     implementation 'jp.wasabeef:glide-transformations:3.3.0'
     //The GPU Filters
     implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
-    //Butter Knife
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //Parceler
     implementation 'org.parceler:parceler-api:1.1.6'
     annotationProcessor 'org.parceler:parceler:1.1.6'
     //Spark button
     implementation 'com.github.varunest:sparkbutton:1.0.5'
-    //Data packed
-    implementation 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
-    //Blurry
-    implementation 'jp.wasabeef:blurry:2.1.1'
     //Arc animator
     implementation 'com.github.asyl.animation:arcanimator:1.0.0'
     //Recyclerview animators
     implementation 'jp.wasabeef:recyclerview-animators:2.3.0'
-
-
+    //Wave view
+    implementation 'com.github.john990:WaveView:v0.9'
+    //Material dialog
+    implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
+    //
+    implementation 'fr.tvbarthel.blurdialogfragment:lib:2.2.0'
 }

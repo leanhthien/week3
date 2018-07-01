@@ -12,6 +12,7 @@ import com.twitter.sdk.android.core.models.Tweet;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import sg.howard.twitterclient.util.SharedPreferenceHelper;
 
 public class TimelinePresenter implements TimelineContract.Presenter {
     TwitterApiClient client = null;
@@ -43,6 +44,11 @@ public class TimelinePresenter implements TimelineContract.Presenter {
                         mView.showError(exception.getMessage());
                     }
                 });
+    }
+
+    @Override
+    public String getImageProfile() {
+        return SharedPreferenceHelper.getInstance().getImageProfile();
     }
 
     @Override

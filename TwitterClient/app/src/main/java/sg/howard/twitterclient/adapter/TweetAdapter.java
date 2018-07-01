@@ -1,7 +1,12 @@
 package sg.howard.twitterclient.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Build;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,6 +76,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
         String name;
         String name_profile;
         String time;
+        Spannable tweet_detail;
         String retweet_count;
         String like_count;
 
@@ -83,9 +89,10 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
         Tweet tweet = mTweet.get(position);
 
         if (tweet.user.profileImageUrl != null)
-            link_thumbnail = tweet.user.profileImageUrl;
+            link_thumbnail = setupLink(tweet.user.profileImageUrl);
         else
             link_thumbnail = "";
+        Log.d("link",link_thumbnail);
 
         if (tweet.user.name.length() > 20)
             name = tweet.user.name.substring(0, 20) + "... ";
@@ -99,11 +106,20 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
 
         time = "• " + TimelineConverter.dateToAge(tweet.createdAt, DateTime.now());
 
+        //For tweet detail
+        tweet_detail = setColor(tweet);
+
+        //For verified icon
         if (tweet.user.verified)
             holder.image_verified.setVisibility(View.VISIBLE);
 
+        //For retweet icon
         if (tweet.retweeted)
             holder.image_retweet.setImageResource(R.drawable.ic_retweet_active);
+
+        //For like icon
+        if (tweet.favorited)
+            holder.spark_button.setChecked(true);
 
         retweet_count = " " + String.valueOf(tweet.retweetCount);
         like_count = " " + String.valueOf(tweet.favoriteCount);
@@ -111,7 +127,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
         holder.name.setText(name);
         holder.name_profile.setText(name_profile);
         holder.time.setText(time);
-        holder.tweet.setText(tweet.text);
+        holder.tweet.setText(tweet_detail);
         holder.retweet.setText(retweet_count);
         holder.like.setText(like_count);
 
@@ -269,4 +285,46 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
         }
     }
 
+    private Spannable setColor(Tweet tweet) {
+
+        Spannable wordtoSpan = new SpannableString(tweet.text);
+
+        for (int i=0; i<tweet.entities.hashtags.size(); i++) {
+            wordtoSpan.setSpan(
+                    new ForegroundColorSpan(mContext.getResources().getColor(R.color.colorPrimaryTwitter)),
+                    tweet.entities.hashtags.get(i).indices.get(0),
+                    tweet.entities.hashtags.get(i).indices.get(1), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+
+        for (int i=0; i<tweet.entities.userMentions.size(); i++) {
+            wordtoSpan.setSpan(
+                    new ForegroundColorSpan(mContext.getResources().getColor(R.color.colorPrimaryTwitter)),
+                    tweet.entities.userMentions.get(i).indices.get(0),
+                    tweet.entities.userMentions.get(i).indices.get(1), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+
+        return wordtoSpan;
+    }
+
+    private String setupLink(String url) {
+        int pos;
+        Log.d("Original link",url);
+        if (url.contains("_normal.jpeg")) {
+            pos = url.indexOf("_normal.jpeg");
+            return url.substring(0,pos)+".jpeg";
+        }
+        else if (url.contains("_normal.png")) {
+            pos = url.indexOf("_normal.png");
+            return url.substring(0,pos)+".png";
+        }
+        else if (url.contains("_normal.jpg")) {
+            pos = url.indexOf("_normal.jpg");
+            return url.substring(0,pos)+".jpg";
+        }
+        return url;
+
+    }
+
 }
+
+

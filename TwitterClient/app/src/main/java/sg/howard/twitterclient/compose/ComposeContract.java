@@ -16,6 +16,8 @@ public interface ComposeContract {
 
     interface Presenter extends BasePresenter{
 
+        String getImageProfile();
+
         void sendTweet(String text);
     }
 }

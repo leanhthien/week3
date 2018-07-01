@@ -24,6 +24,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".welcome.WelcomeActivity"
+            android:theme="@style/NoActionBar_Welcome"/>
+        <activity
             android:name=".timeline.TimelineActivity"
             android:theme="@style/NoActionBar_Timeline"/>
         <activity

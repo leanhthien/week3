@@ -10,6 +10,7 @@ import com.twitter.sdk.android.core.models.Tweet;
 
 import androidx.annotation.NonNull;
 import sg.howard.twitterclient.base.BaseView;
+import sg.howard.twitterclient.util.SharedPreferenceHelper;
 
 
 public class ComposeTweetPresenter implements ComposeContract.Presenter {
@@ -41,6 +42,11 @@ public class ComposeTweetPresenter implements ComposeContract.Presenter {
                         mView.showError(exception.getMessage());
                     }
                 });
+    }
+
+    @Override
+    public String getImageProfile() {
+        return SharedPreferenceHelper.getInstance().getImageProfile();
     }
 
     @Override

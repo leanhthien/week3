@@ -9,11 +9,15 @@ import sg.howard.twitterclient.base.BaseView;
 
 public interface TimelineContract {
     interface View extends BaseView<Presenter>{
+
         void onGetStatusesSuccess(List<Tweet> data);
     }
 
     interface Presenter extends BasePresenter{
 
         void startGetTimeline(int page);
+
+        String getImageProfile();
+
     }
 }

@@ -29,6 +29,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import sg.howard.twitterclient.R;
 import sg.howard.twitterclient.timeline.TimelineActivity;
+import sg.howard.twitterclient.welcome.WelcomeActivity;
 
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.View {
@@ -89,7 +90,10 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     @Override
     public void saveUserSuccess() {
 
-        setContentView(R.layout.activity_welcome);
+        startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
+        finish();
+
+        /*setContentView(R.layout.activity_welcome);
 
         //Display the logo during 5 seconds,
         new CountDownTimer(3000,3000){
@@ -105,7 +109,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
                 finish();
 
             }
-        }.start();
+        }.start();*/
 
     }
 

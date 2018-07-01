@@ -2,9 +2,7 @@
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
     android:transitionOrdering="together">
 
-    <explode xmlns:android="http://schemas.android.com/apk/res/android">
-    </explode>
-    <fade>
-    </fade>
+    <fade xmlns:android="http://schemas.android.com/apk/res/"
+        android:duration="2000"/>
 
 </transitionSet>

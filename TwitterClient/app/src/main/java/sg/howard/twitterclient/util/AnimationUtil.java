@@ -81,7 +81,8 @@ public class AnimationUtil {
         circularAnimator.addListener(new SimpleListener() {
             @Override
             public void onAnimationEnd(Animator animator) {
-                raise();
+                //raise();
+                rearrange();
             }
         });
         circularAnimator.start();
