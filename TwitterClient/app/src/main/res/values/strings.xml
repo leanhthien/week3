@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TwitterClient</string>
+
+    <string name="login">LOGIN</string>
+    <string name="send">SEND</string>
+    <string name="fab_target">fab target</string>
+</resources>

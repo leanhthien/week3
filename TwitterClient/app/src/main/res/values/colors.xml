@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!--Basic color-->
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+
+    <!--Twitter color-->
+    <color name="colorPrimaryTwitter">#1DA1F2</color>
+    <color name="colorSecondaryTwitter">#14171A</color>
+    <color name="colorDarkGrayTwitter"> #657786</color>
+    <color name="colorLightGrayTwitter">#AAB8C2</color>
+    <color name="colorExtraLightGrayTwitter">#E1E8ED</color>
+    <color name="colorExtraExtraLightGrayTwitter">#F5F8FA</color>
+
+
+    <color name="colorRetweeted">#17BF63</color>
+    <color name="colorLikeActive">#E0245E</color>
+
+    <color name="colorFabButton">#f5f5f5</color>
+    <color name="colorLike">#FFD700</color>
+
+
+</resources>
