@@ -50,8 +50,13 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-<img src=""  title='Video Walkthrough' width='' alt='Video Walkthrough' />
-Link gift " http://i.imgur.com/Z08nJUt.gif "
+<img src="https://i.imgur.com/xXW2QgB.gif"  title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="https://i.imgur.com/BU8Qb18.gif"  title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="https://i.imgur.com/eKciq7R.gif"  title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="https://i.imgur.com/2NirPuy.gif"  title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
